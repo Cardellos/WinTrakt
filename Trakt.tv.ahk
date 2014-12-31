@@ -57,18 +57,39 @@ GetFile:
 	RegExMatch(FullPage,GetError,Error)
 	If (Error1 = "server is over capacity")
 	{
-		ToolTip, server is over capacity
-		Sleep 1000
-		ToolTip,
-		Sleep 3000
-		ToolTip, trying again...
-		Sleep 1000
-		ToolTip,
-		GoSub,GetFile
+		If ErrorCounter < 10
+		{
+			ErrorCounter++
+			ToolTip, server is over capacity
+			Sleep 1000
+			ToolTip,
+			Sleep 3000
+			ToolTip, trying again...
+			Sleep 1000
+			ToolTip,
+			GoSub,GetFile
+		} Else {
+			ErrorCounter=0
+			MsgBox,33,, I Got the error `n"%Error1%"`n 10 times, want me to try 10 more?
+			IfMsgBox Ok
+			{
+				ToolTip, trying again...
+				Sleep 1000
+				ToolTip,
+				GoSub,GetFile
+			}
+		}
 	} 
-	Else if not Error1="server is over capacity"
+	Else if NOT (Error1="server is over capacity") OR (Error1="")
 	{
-		MsgBox %Error1%
+		MsgBox,33,, I Got the error `n"%Error1%",`n want me to try again?
+		IfMsgBox Ok
+		{
+			ToolTip, trying again...
+			Sleep 1000
+			ToolTip,
+			GoSub,GetFile
+		}
 	} 
 	Else If (Error = "") 
 	{
