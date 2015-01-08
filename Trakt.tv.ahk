@@ -40,11 +40,10 @@ Menu, Tray, Default,Go
 WinTitle = Info
 VarFile = Res\Var
 CheckTime := "0805" 
-SetTimer, Update, 60000 
+SetTimer, Update, 60000
 GoSub,Test
 NextWall:=DllCall("RegisterWindowMessage","UInt", &Var:="NextWall")
 ToggInfo:=DllCall("RegisterWindowMessage","UInt", &Var:="ToggInfo")
-GetError=siU)(?(?=.*\{\"status\"\:\"failure\").*\"error\"\:\"(.*)\"\}).*
 return
 
 Test:
@@ -52,25 +51,70 @@ return
 
 GetFile:
 	Info = %A_ScriptDir%\Info\%A_DDDD%\%User%.Json
+	ToolTip, Downloading
 	UrlDownloadToFile, %URL%?%A_Hour%%A_Min% ,%Info%
 	FileRead, FullPage, %Info%
-	RegExMatch(FullPage,GetError,Error)
-	If (Error1 = "server is over capacity")
+	If (FullPage = "")
 	{
-		If ErrorCounter < 10
+		If BlankCounter < 10
 		{
-			ErrorCounter++
-			ToolTip, server is over capacity
-			Sleep 1000
-			ToolTip,
+			BlankCounter++
+			VarFile("Res/ErrorLog.log",A_Now,"Blank page. Nothing to read")
+			ToolTip, Blank page. Nothing to read
 			Sleep 3000
+			ToolTip,
+			Sleep 1000
 			ToolTip, trying again...
 			Sleep 1000
 			ToolTip,
 			GoSub,GetFile
 		} Else {
-			ErrorCounter=0
-			MsgBox,33,, I Got the error `n"%Error1%"`n 10 times, want me to try 10 more?
+			BlankCounter=0
+			VarFile("Res/ErrorLog.log",A_Now,"Blank Page. Nothing to read")
+			MsgBox,33,, I got a blank page 10 times, `nThis probably means that the link is wrong `nwant me to try 10 more?
+			IfMsgBox Ok
+			{
+				ToolTip, trying again...
+				Sleep 1000
+				ToolTip,
+				GoSub,GetFile
+			}
+		}
+	}
+	RegExMatch(FullPage,GetError,Error)
+	If NOT (Error = "")
+	{
+		If (Error1 = "server is over capacity")
+		{
+			If ErrorCounter < 10
+			{
+				ErrorCounter++
+				VarFile("Res/ErrorLog.log",A_Now,Error1)
+				ToolTip, %Error1%
+				Sleep 3000
+				ToolTip,
+				Sleep 1000
+				ToolTip, trying again...
+				Sleep 1000
+				ToolTip,
+				GoSub,GetFile
+			} Else {
+				ErrorCounter=0
+				VarFile("Res/ErrorLog.log",A_Now,Error1)
+				MsgBox,33,, I got the error `n"%Error1%"`n 10 times, want me to try 10 more?
+				IfMsgBox Ok
+				{
+					ToolTip, trying again...
+					Sleep 1000
+					ToolTip,
+					GoSub,GetFile
+				}
+			}
+		} 
+		Else if NOT (Error1="server is over capacity") OR (Error1="")
+		{
+			VarFile("Res/ErrorLog.log",A_Now,Error1)
+			MsgBox,33,, I got the error `n"%Error1%",`n want me to try again?
 			IfMsgBox Ok
 			{
 				ToolTip, trying again...
@@ -80,21 +124,40 @@ GetFile:
 			}
 		}
 	} 
-	Else if NOT (Error1="server is over capacity") OR (Error1="")
+	RegExMatch(FullPage,GetHTML,HTML)
+	If NOT (HTML = "")
 	{
-		MsgBox,33,, I Got the error `n"%Error1%",`n want me to try again?
-		IfMsgBox Ok
+		 if NOT (HTML1="")
 		{
-			ToolTip, trying again...
-			Sleep 1000
-			ToolTip,
-			GoSub,GetFile
+			If HTMLCounter < 10
+			{
+				HTMLCounter++
+				VarFile("Res/ErrorLog.log",A_Now,HTML1)
+;				MsgBox,33,, I got `n"%HTML1%",`n want me to try again?
+;				IfMsgBox Ok
+;				{
+				ToolTip, trying again...
+				Sleep 1000
+				ToolTip,
+				GoSub,GetFile
+;				}
+			} Else {
+				HTMLCounter=0
+				VarFile("Res/ErrorLog.log",A_Now,HTML1)
+				MsgBox,33,, I got `n"%HTML1%"`n 10 times, want me to try 10 more?
+				IfMsgBox Ok
+				{
+					ToolTip, trying again...
+					Sleep 1000
+					ToolTip,
+					GoSub,GetFile
+				}
+			}
 		}
-	} 
-	Else If (Error = "") 
+	}
+	RegExMatch(FullPage,GetDay,Day)
+	If NOT (Day = "")
 	{
-		ToolTip, Downloading
-		RegExMatch(FullPage,GetDay,Day)
 		StringSplit,Day,A_LoopField,`}`]`}
 		ToolTip, Dating
 ;		T := "`n`n# " ErrorLevel " #`n" Day1 "`n`n" Day2
@@ -763,10 +826,9 @@ SetAirTime(Byref H){
 SetSE(Byref SE){
 SE:= RegExReplace(SE, "^(\d){1}$", "0$1")
 }
-
-VarFile(File,Var,Put,Find="",After="=",Before="`n"){
+VarFile(File,Where,Put,Find="",After="=",Before="`n"){
 	FileRead what, %File%
-	start := InStr(what, Var)
+	start := InStr(what, Where)
 	If (start > 0){
 		start := InStr(what, After,, start)
 		If (start > 0){
@@ -793,9 +855,11 @@ VarFile(File,Var,Put,Find="",After="=",Before="`n"){
 			MsgBox 16,, Bad format of '%File%'! `n No %After%
 		}
 	}Else{
-		MsgBox 20,, '%Var%' not found in '%File%'! `nDo you want to create it?
-		IfMsgBox, Yes
-			FileAppend `n%Var%%After%%Put%%before%, %File%	
+;		MsgBox 20,, '%Where%' not found in '%File%'! `nDo you want to create it?
+;		IfMsgBox, Yes
+			ToolTip, Appending %Put% to %File%
+			FileAppend %Where%%After%%Put%%before%, %File%	
+			ToolTip,
 	}
 }
 
