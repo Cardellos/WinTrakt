@@ -1,0 +1,455 @@
+;[Dates]
+Date100=October 22, 2014
+Date200=October 23, 2014
+WeekDate1=Wednesday
+WeekDate2=Thursday
+Date101=2014
+Date102=10
+Date103=22
+Date201=2014
+Date202=10
+Date203=22
+;[Counters]
+ShowCounter1=4
+ShowCounter2=2
+;[Toggles]
+CalTog=1
+WallTog=0
+WhatToggle=1
+WallInfo=4
+Toggle=0
+ToggleWall=0
+ToggleWatch=1
+ToggleAero=1
+TCWallNext=0
+TCWallInfo=1
+TCNoti=1
+TCProg=1
+TCIma=1
+TCDate=1
+TCRAll=0
+TCDisc=1
+Toggle101=1
+Toggle102=1
+Toggle103=1
+Toggle104=1
+Toggle105=1
+Toggle106=1
+Toggle107=1
+Toggle108=0
+Toggle109=0
+Toggle1010=0
+;[RegEx]
+ClientID=1028985fae5da482c17979b16eb359794176cca0fe609cf0d4488859641b88e4
+ClientIDV2=d60710549a5bd088a362c6ac725d108f5cd3ee84069451d06b386db3c4dfce3e
+API=2277992484be345a27434d632f0d4230
+API=f46fbebb833fbeb8196b69e0e8d5de8f852b7ea6
+User=Cardellos
+Days=3
+DiscoDays=3
+URL=http://api.trakt.us/user/calendar/shows.json/%API%/%User%/today/%Days%
+;URL=http://api.trakt.tv/user/calendars/shows.json/2277992484be345a27434d632f0d4230/cardellos/today/2
+ProURL=http://api.trakt.tv/user/profile.json/%API%/%User%
+WatchURL=http://api.trakt.tv/user/watching.json/%API%/%User%
+DiscURL=http://api.trakt.tv/calendar/shows.json/2277992484be345a27434d632f0d4230/today
+GetDay=siU)(?(?=.*\{\"date\").*\{\"date\"\:(.*)\}\]\}).*(?(?=.*\{\"date\").*\{\"date\"\:(.*)\}\]\}).*(?(?=.*\{\"date\").*\{\"date\"\:(.*)\}\]\}).*(?(?=.*\{\"date\").*\{\"date\"\:(.*)\}\]\}).*(?(?=.*\{\"date\").*\{\"date\"\:(.*)\}\]\}).*(?(?=.*\{\"date\").*\{\"date\"\:(.*)\}\]\}).*(?(?=.*\{\"date\").*\{\"date\"\:(.*)\}\]\}).*
+GetDate=siU)(?(?=.*\{\"date\").*\{\"date\"\:\"(.*)-(.*)-(.*)\",).*(?(?=.*\{\"date\").*\{\"date\"\:\"(.*)-(.*)-(.*)\",).*
+GetTitle=siU)(?(?=.*\{\"Title\").*\{\"title\"\:\"(.*)\",).*(?(?=.*\{\"Title\").*\{\"title\"\:\"(.*)\",).*(?(?=.*\{\"Title\").*\{\"title\"\:\"(.*)\",).*(?(?=.*\{\"Title\").*\{\"title\"\:\"(.*)\",).*(?(?=.*\{\"Title\").*\{\"title\"\:\"(.*)\",).*(?(?=.*\{\"Title\").*\{\"title\"\:\"(.*)\",).*(?(?=.*\{\"Title\").*\{\"title\"\:\"(.*)\",).*(?(?=.*\{\"Title\").*\{\"title\"\:\"(.*)\",).*(?(?=.*\{\"Title\").*\{\"title\"\:\"(.*)\",).*(?(?=.*\{\"Title\").*\{\"title\"\:\"(.*)\",).*
+GetShowURL=siU)(?(?=.*\"url\").*\"url\"\:\"(.*)\",).*(?(?=.*\"url\").*\"url\"\:\"(.*)\",).*(?(?=.*\"url\").*\"url\"\:\"(.*)\",).*(?(?=.*\"url\").*\"url\"\:\"(.*)\",).*(?(?=.*\"url\").*\"url\"\:\"(.*)\",).*(?(?=.*\"url\").*\"url\"\:\"(.*)\",).*(?(?=.*\"url\").*\"url\"\:\"(.*)\",).*(?(?=.*\"url\").*\"url\"\:\"(.*)\",).*(?(?=.*\"url\").*\"url\"\:\"(.*)\",).*(?(?=.*\"url\").*\"url\"\:\"(.*)\",).*(?(?=.*\"url\").*\"url\"\:\"(.*)\",).*(?(?=.*\"url\").*\"url\"\:\"(.*)\",).*(?(?=.*\"url\").*\"url\"\:\"(.*)\",).*(?(?=.*\"url\").*\"url\"\:\"(.*)\",).*(?(?=.*\"url\").*\"url\"\:\"(.*)\",).*(?(?=.*\"url\").*\"url\"\:\"(.*)\",).*(?(?=.*\"url\").*\"url\"\:\"(.*)\",).*(?(?=.*\"url\").*\"url\"\:\"(.*)\",).*(?(?=.*\"url\").*\"url\"\:\"(.*)\",).*(?(?=.*\"url\").*\"url\"\:\"(.*)\",).*
+GetEpURL=siU)(?(?=.*\"url\").*\"\,\"url\"\:\"(.*)\",).*(?(?=.*\"url\").*\"\,\"url\"\:\"(.*)\",).*(?(?=.*\"url\").*\"\,\"url\"\:\"(.*)\",).*(?(?=.*\"url\").*\"\,\"url\"\:\"(.*)\",).*(?(?=.*\"url\").*\"\,\"url\"\:\"(.*)\",).*(?(?=.*\"url\").*\"\,\"url\"\:\"(.*)\",).*(?(?=.*\"url\").*\"\,\"url\"\:\"(.*)\",).*(?(?=.*\"url\").*\"\,\"url\"\:\"(.*)\",).*(?(?=.*\"url\").*\"\,\"url\"\:\"(.*)\",).*(?(?=.*\"url\").*\"\,\"url\"\:\"(.*)\",).*
+GetCountry=siU)(?(?=.*\"country\").*\"country\"\:\(.*),\").*(?(?=.*\"country\").*\"country\"\:\(.*),\").*(?(?=.*\"country\").*\"country\"\:\(.*),\").*(?(?=.*\"country\").*\"country\"\:\(.*),\").*(?(?=.*\"country\").*\"country\"\:\(.*),\").*(?(?=.*\"country\").*\"country\"\:\(.*),\").*(?(?=.*\"country\").*\"country\"\:\(.*),\").*(?(?=.*\"country\").*\"country\"\:\(.*),\").*(?(?=.*\"country\").*\"country\"\:\(.*),\").*(?(?=.*\"country\").*\"country\"\:\(.*),\").*
+GetOverview=siU)(?(?=.*\"overview\").*\"overview\"\:\"(.*)\",).*(?(?=.*\"overview\").*\"overview\"\:\"(.*)\",).*(?(?=.*\"overview\").*\"overview\"\:\"(.*)\",).*(?(?=.*\"overview\").*\"overview\"\:\"(.*)\",).*(?(?=.*\"overview\").*\"overview\"\:\"(.*)\",).*(?(?=.*\"overview\").*\"overview\"\:\"(.*)\",).*(?(?=.*\"overview\").*\"overview\"\:\"(.*)\",).*(?(?=.*\"overview\").*\"overview\"\:\"(.*)\",).*(?(?=.*\"overview\").*\"overview\"\:\"(.*)\",).*(?(?=.*\"overview\").*\"overview\"\:\"(.*)\",).*(?(?=.*\"overview\").*\"overview\"\:\"(.*)\",).*(?(?=.*\"overview\").*\"overview\"\:\"(.*)\",).*(?(?=.*\"overview\").*\"overview\"\:\"(.*)\",).*(?(?=.*\"overview\").*\"overview\"\:\"(.*)\",).*(?(?=.*\"overview\").*\"overview\"\:\"(.*)\",).*(?(?=.*\"overview\").*\"overview\"\:\"(.*)\",).*(?(?=.*\"overview\").*\"overview\"\:\"(.*)\",).*(?(?=.*\"overview\").*\"overview\"\:\"(.*)\",).*(?(?=.*\"overview\").*\"overview\"\:\"(.*)\",).*(?(?=.*\"overview\").*\"overview\"\:\"(.*)\",).*
+GetRuntime=siU)(?(?=.*\"runtime\").*\"runtime\"\:(.*),\").*(?(?=.*\"runtime\").*\"runtime\"\:(.*),\").*(?(?=.*\"runtime\").*\"runtime\"\:(.*),\").*(?(?=.*\"runtime\").*\"runtime\"\:(.*),\").*(?(?=.*\"runtime\").*\"runtime\"\:(.*),\").*(?(?=.*\"runtime\").*\"runtime\"\:(.*),\").*(?(?=.*\"runtime\").*\"runtime\"\:(.*),\").*(?(?=.*\"runtime\").*\"runtime\"\:(.*),\").*(?(?=.*\"runtime\").*\"runtime\"\:(.*),\").*(?(?=.*\"runtime\").*\"runtime\"\:(.*),\").*
+GetNetwork=siU)(?(?=.*\"network\").*\"network\"\:\"(.*)\",).*(?(?=.*\"network\").*\"network\"\:\"(.*)\",).*(?(?=.*\"network\").*\"network\"\:\"(.*)\",).*(?(?=.*\"network\").*\"network\"\:\"(.*)\",).*(?(?=.*\"network\").*\"network\"\:\"(.*)\",).*(?(?=.*\"network\").*\"network\"\:\"(.*)\",).*(?(?=.*\"network\").*\"network\"\:\"(.*)\",).*(?(?=.*\"network\").*\"network\"\:\"(.*)\",).*(?(?=.*\"network\").*\"network\"\:\"(.*)\",).*(?(?=.*\"network\").*\"network\"\:\"(.*)\",).*
+GetAirTime=siU)(?(?=.*\"air_time_localized\").*\"air_time_localized\"\:\"(.*)\",).*(?(?=.*\"air_time_localized\").*\"air_time_localized\"\:\"(.*)\",).*(?(?=.*\"air_time_localized\").*\"air_time_localized\"\:\"(.*)\",).*(?(?=.*\"air_time_localized\").*\"air_time_localized\"\:\"(.*)\",).*(?(?=.*\"air_time_localized\").*\"air_time_localized\"\:\"(.*)\",).*(?(?=.*\"air_time_localized\").*\"air_time_localized\"\:\"(.*)\",).*(?(?=.*\"air_time_localized\").*\"air_time_localized\"\:\"(.*)\",).*(?(?=.*\"air_time_localized\").*\"air_time_localized\"\:\"(.*)\",).*(?(?=.*\"air_time_localized\").*\"air_time_localized\"\:\"(.*)\",).*(?(?=.*\"air_time_localized\").*\"air_time_localized\"\:\"(.*)\",).*
+GetGenres=siU)(?(?=.*\"genres\").*\"genres\"\:\[(.*)\]).*(?(?=.*\"genres\").*\"genres\"\:\[(.*)\]).*(?(?=.*\"genres\").*\"genres\"\:\[(.*)\]).*(?(?=.*\"genres\").*\"genres\"\:\[(.*)\]).*(?(?=.*\"genres\").*\"genres\"\:\[(.*)\]).*(?(?=.*\"genres\").*\"genres\"\:\[(.*)\]).*(?(?=.*\"genres\").*\"genres\"\:\[(.*)\]).*(?(?=.*\"genres\").*\"genres\"\:\[(.*)\]).*(?(?=.*\"genres\").*\"genres\"\:\[(.*)\]).*(?(?=.*\"genres\").*\"genres\"\:\[(.*)\]).*
+GetSeason=siU)(?(?=.*\"season\").*\"season\"\:(.*),\").*(?(?=.*\"season\").*\"season\"\:(.*),\").*(?(?=.*\"season\").*\"season\"\:(.*),\").*(?(?=.*\"season\").*\"season\"\:(.*),\").*(?(?=.*\"season\").*\"season\"\:(.*),\").*(?(?=.*\"season\").*\"season\"\:(.*),\").*(?(?=.*\"season\").*\"season\"\:(.*),\").*(?(?=.*\"season\").*\"season\"\:(.*),\").*(?(?=.*\"season\").*\"season\"\:(.*),\").*(?(?=.*\"season\").*\"season\"\:(.*),\").*
+GetEp=siU)(?(?=.*\"number\").*\"number\"\:(.*),\").*(?(?=.*\"number\").*\"number\"\:(.*),\").*(?(?=.*\"number\").*\"number\"\:(.*),\").*(?(?=.*\"number\").*\"number\"\:(.*),\").*(?(?=.*\"number\").*\"number\"\:(.*),\").*(?(?=.*\"number\").*\"number\"\:(.*),\").*(?(?=.*\"number\").*\"number\"\:(.*),\").*(?(?=.*\"number\").*\"number\"\:(.*),\").*(?(?=.*\"number\").*\"number\"\:(.*),\").*(?(?=.*\"number\").*\"number\"\:(.*),\").*
+GetEpTitle=siU)(?(?=.*\,\"title\").*\,\"title\"\:\"(.*)\",).*(?(?=.*\,\"title\").*\,\"title\"\:\"(.*)\",).*(?(?=.*\,\"title\").*\,\"title\"\:\"(.*)\",).*(?(?=.*\,\"title\").*\,\"title\"\:\"(.*)\",).*(?(?=.*\,\"title\").*\,\"title\"\:\"(.*)\",).*(?(?=.*\,\"title\").*\,\"title\"\:\"(.*)\",).*(?(?=.*\,\"title\").*\,\"title\"\:\"(.*)\",).*(?(?=.*\,\"title\").*\,\"title\"\:\"(.*)\",).*(?(?=.*\,\"title\").*\,\"title\"\:\"(.*)\",).*(?(?=.*\,\"title\").*\,\"title\"\:\"(.*)\",).*
+GetCounter={"show":{
+GetError=siU)(?(?=.*\{\"status\"\:\"failure\",).*\"error\"\:\"(.*)\"\})
+GetHTML=siU)(?(?=.*\<\!DOCTYPE html\>).*\<title\>(.*)\<\/title\>)
+;[Images]
+GetAvatar=siU)\"avatar\"\:\"(.*)\"\,
+GetBanner=siU)(?(?=.*\"banner\").*\"banner\"\:\"(.*)\"}).*(?(?=.*\"banner\").*\"banner\"\:\"(.*)\"}).*(?(?=.*\"banner\").*\"banner\"\:\"(.*)\"}).*(?(?=.*\"banner\").*\"banner\"\:\"(.*)\"}).*(?(?=.*\"banner\").*\"banner\"\:\"(.*)\"}).*(?(?=.*\"banner\").*\"banner\"\:\"(.*)\"}).*(?(?=.*\"banner\").*\"banner\"\:\"(.*)\"}).*(?(?=.*\"banner\").*\"banner\"\:\"(.*)\"}).*(?(?=.*\"banner\").*\"banner\"\:\"(.*)\"}).*(?(?=.*\"banner\").*\"banner\"\:\"(.*)\"}).*
+GetScreen=siU)(?(?=.*\{\"screen\").*\{\"screen\"\:\"(.*)\"\},).*(?(?=.*\{\"screen\").*\{\"screen\"\:\"(.*)\"\},).*(?(?=.*\{\"screen\").*\{\"screen\"\:\"(.*)\"\},).*(?(?=.*\{\"screen\").*\{\"screen\"\:\"(.*)\"\},).*(?(?=.*\{\"screen\").*\{\"screen\"\:\"(.*)\"\},).*(?(?=.*\{\"screen\").*\{\"screen\"\:\"(.*)\"\},).*(?(?=.*\{\"screen\").*\{\"screen\"\:\"(.*)\"\},).*(?(?=.*\{\"screen\").*\{\"screen\"\:\"(.*)\"\},).*(?(?=.*\{\"screen\").*\{\"screen\"\:\"(.*)\"\},).*(?(?=.*\{\"screen\").*\{\"screen\"\:\"(.*)\"\},).*
+GetFanart=siU)(?(?=.*\"fanart\").*\"fanart\"\:\"(.*)\",).*(?(?=.*\"fanart\").*\"fanart\"\:\"(.*)\",).*(?(?=.*\"fanart\").*\"fanart\"\:\"(.*)\",).*(?(?=.*\"fanart\").*\"fanart\"\:\"(.*)\",).*(?(?=.*\"fanart\").*\"fanart\"\:\"(.*)\",).*(?(?=.*\"fanart\").*\"fanart\"\:\"(.*)\",).*(?(?=.*\"fanart\").*\"fanart\"\:\"(.*)\",).*(?(?=.*\"fanart\").*\"fanart\"\:\"(.*)\",).*(?(?=.*\"fanart\").*\"fanart\"\:\"(.*)\",).*(?(?=.*\"fanart\").*\"fanart\"\:\"(.*)\",).*
+GetPoster=siU)(?(?=.*\{\"poster\").*\{\"poster\"\:\"(.*)\",).*(?(?=.*\{\"poster\").*\{\"poster\"\:\"(.*)\",).*(?(?=.*\{\"poster\").*\{\"poster\"\:\"(.*)\",).*(?(?=.*\{\"poster\").*\{\"poster\"\:\"(.*)\",).*(?(?=.*\{\"poster\").*\{\"poster\"\:\"(.*)\",).*(?(?=.*\{\"poster\").*\{\"poster\"\:\"(.*)\",).*(?(?=.*\{\"poster\").*\{\"poster\"\:\"(.*)\",).*(?(?=.*\{\"poster\").*\{\"poster\"\:\"(.*)\",).*(?(?=.*\{\"poster\").*\{\"poster\"\:\"(.*)\",).*(?(?=.*\{\"poster\").*\{\"poster\"\:\"(.*)\",).*
+;[UserInfo]
+GetFullName=siU)\"full_name\"\:\"(.*)\",.*
+GetGender=siU)\"gender\"\:\"(.*)\",.*
+GetAge=siU)\"age\"\:(.*),.*
+GetLocation=siU)\"location\"\:\"(.*)\",.*
+GetAbout=siU)\"about\"\:\"(.*)\",.*
+GetUserURL=siU)\"url\"\:\"(.*)\",.*
+GetVIP=siU)\"vip\"\:(.*),.*
+;[Discover]
+GetTitleD=(?(?=.*\{\"Title\").*\{\"title\"\:\"(.*)\",).*
+GetShowURLd=(?(?=.*\"url\").*\"url\"\:\"(.*)\",).*
+GetEpURLd=(?(?=.*\"url\").*\"\,\"url\"\:\"(.*)\",).*
+GetCountryd=(?(?=.*\"country\").*\"country\"\:\(.*),\").*
+GetOverviewd=(?(?=.*\"overview\").*\"overview\"\:\"(.*)\",).*
+GetRuntimed=(?(?=.*\"runtime\").*\"runtime\"\:(.*),\").*
+GetNetworkd=(?(?=.*\"network\").*\"network\"\:\"(.*)\",).*
+GetAirTimed=(?(?=.*\"air_time_localized\").*\"air_time_localized\"\:\"(.*)\",).*
+GetGenresd=(?(?=.*\"genres\").*\"genres\"\:\[(.*)\]).*
+GetSeasond=(?(?=.*\"season\").*\"season\"\:(.*),\").*
+GetEpd=(?(?=.*\"number\").*\"number\"\:(.*),\").*
+GetEpTitled=(?(?=.*\,\"title\").*\,\"title\"\:\"(.*)\",).*
+GetBannerd=(?(?=.*\"banner\").*\"banner\"\:\"(.*)\"}).*
+GetScreend=(?(?=.*\{\"screen\").*\{\"screen\"\:\"(.*)\"\},).*en\"\:\"(.*)\"\},).*
+GetFanartd=(?(?=.*\"fanart\").*\"fanart\"\:\"(.*)\",).*
+GetPosterd=(?(?=.*\{\"poster\").*\{\"poster\"\:\"(.*)\",).*
+
+;[Config]
+UserFullName=Bruno Cardellos
+UserGender=male
+UserAge=29
+UserLocation=Sampa
+UserAbout=I'm just another geek, addicted to tv and movies. From classic, noir and black and white, to sciFi, thriller and horror movies. I'm very happy that this site exists, before it i had to write down all the shows i watched and always lost where it was written. I'm also making a Trakt skin for Rainmeter, that's why the long about, to see what shows up in the about section of my skin.
+UserURL=http://trakt.tv/user/Cardellos
+UserVIP=1
+;[Title]
+Title101=Person of Interest
+Title102=The Late Late Show with Craig Ferguson
+Title103=Arrow
+Title104=The 100
+Title105=
+Title106=
+Title107=
+Title108=
+Title109=
+Title1010=
+Title201=American Horror Story
+Title202=The Late Late Show with Craig Ferguson
+Title203=
+Title204=
+Title205=
+Title206=
+Title207=
+Title208=
+Title209=
+Title2010=
+;[Country]
+Country101=United States
+Country102=United States
+Country103=United States
+Country104=United States
+Country105=United States
+Country106=United Kingdom
+Country107=
+Country108=
+Country109=
+Country1010=
+Country201=United States
+Country202=United States
+Country203=United States
+Country204=United States
+Country205=United Kingdom
+Country206=United States
+Country207=
+Country208=
+Country209=
+Country2010=
+;[ShowUrl]
+ShowURL101=http://trakt.tv/show/person-of-interest
+ShowURL102=http://trakt.tv/show/the-late-late-show-with-craig-ferguson
+ShowURL103=http://trakt.tv/show/arrow
+ShowURL104=http://trakt.tv/show/the-100
+ShowURL105=
+ShowURL106=
+ShowURL107=
+ShowURL108=
+ShowURL109=
+ShowURL1010=
+ShowURL201=http://trakt.tv/show/american-horror-story
+ShowURL202=http://trakt.tv/show/the-late-late-show-with-craig-ferguson
+ShowURL203=
+ShowURL204=
+ShowURL205=
+ShowURL206=
+ShowURL207=
+ShowURL208=
+ShowURL209=
+ShowURL2010=
+;[AirTime]
+AirTime101=00:00
+AirTime102=04:35
+AirTime103=22:00
+AirTime104=23:00
+AirTime105=
+AirTime106=
+AirTime107=
+AirTime108=
+AirTime109=
+AirTime1010=
+AirTime201=00:00
+AirTime202=04:35
+AirTime203=
+AirTime204=
+AirTime205=
+AirTime206=
+AirTime207=
+AirTime208=
+AirTime209=
+AirTime2010=
+;[NotiTime]
+NotiTime101=0100
+NotiTime102=0159
+NotiTime103=2300
+NotiTime104=2200
+NotiTime105=2300
+NotiTime106=2300
+NotiTime107=0000
+NotiTime108=
+NotiTime109=
+NotiTime1010=
+NotiTime201=0000
+NotiTime202=0159
+NotiTime203=2200
+NotiTime204=2300
+NotiTime205=
+NotiTime206=
+NotiTime207=
+NotiTime208=
+NotiTime209=
+NotiTime2010=
+;[Ep]
+Ep101=05
+Ep102=33
+Ep103=03
+Ep104=01
+Ep105=
+Ep106=
+Ep107=
+Ep108=
+Ep109=
+Ep1010=
+Ep201=03
+Ep202=34
+Ep203=
+Ep204=
+Ep205=
+Ep206=
+Ep207=
+Ep208=
+Ep209=
+Ep2010=
+;[EpTitle]
+EpTitle101=Prophets
+EpTitle102=Jason Schwartzman, Jacqueline Toboni
+EpTitle103=Corto Maltese
+EpTitle104=The 48
+EpTitle105=
+EpTitle106=
+EpTitle107=
+EpTitle108=
+EpTitle109=
+EpTitle1010=
+EpTitle201=Edward Mordrake (1)
+EpTitle202=Shailene Woodley, Jack McGee
+EpTitle203=
+EpTitle204=
+EpTitle205=
+EpTitle206=
+EpTitle207=
+EpTitle208=
+EpTitle209=
+EpTitle2010=
+;[EpURL]
+EpURL101=http://trakt.tv/show/person-of-interest/season/4/episode/5
+EpURL102=http://trakt.tv/show/the-late-late-show-with-craig-ferguson/season/11/episode/33
+EpURL103=http://trakt.tv/show/arrow/season/3/episode/3
+EpURL104=http://trakt.tv/show/the-100/season/2/episode/1
+EpURL105=
+EpURL106=
+EpURL107=
+EpURL108=
+EpURL109=
+EpURL1010=
+EpURL201=http://trakt.tv/show/american-horror-story/season/4/episode/3
+EpURL202=http://trakt.tv/show/the-late-late-show-with-craig-ferguson/season/11/episode/34
+EpURL203=
+EpURL204=
+EpURL205=
+EpURL206=
+EpURL207=
+EpURL208=
+EpURL209=
+EpURL2010=
+;[Overview]
+Overview101=Person of Interest is an American crime drama television series broadcasting on CBS. It is based on a screenplay developed by Jonathan Nolan. The series revolves around a former CIA officer (Jim Caviezel) recruited by a mysterious billionaire (Michael Emerson) to prevent violent crimes in New York City.
+Overview102=\"The Late Late Show\" is a (very) late night talk show hosted by Craig Ferguson and airs after \"The Late Show with David Letterman\". Craig hosts many international guests along with Geoff Peterson, his robot skeleton B.F.F.
+Overview103=Oliver Queen and his father are lost at sea when their luxury yacht sinks. His father doesn't survive. Oliver survives on an uncharted island for five years learning to fight, but also learning about his father's corruption and unscrupulous business dealings. He returns to civilization a changed man, determined to put things right. He disguises himself with the hood of one of his mysterious island mentors, arms himself with a bow and sets about hunting down the men and women who have corrupted his city.
+Overview104=Based on the books by Kass Morgan, this show takes place 100 years in the future, when the Earth has been abandoned due to radioactivity. The last surviving humans live on an ark orbiting the planet \u2014 but the ark won't last forever. So the repressive regime picks 100 expendable juvenile delinquents to send down to Earth to see if the planet is still habitable.
+Overview105=
+Overview106=
+Overview107=
+Overview108=
+Overview109=
+Overview1010=
+Overview201=American Horror Story is a horror-drama television franchise created and produced by Ryan Murphy and Brad Falchuk. Described as an anthology series, each season is conceived as a self-contained miniseries, following a disparate set of characters and settings, and a storyline with its own \"beginning, middle and end\".
+Overview202=\"The Late Late Show\" is a (very) late night talk show hosted by Craig Ferguson and airs after \"The Late Show with David Letterman\". Craig hosts many international guests along with Geoff Peterson, his robot skeleton B.F.F.
+Overview203=
+Overview204=
+Overview205=
+Overview206=
+Overview207=
+Overview208=
+Overview209=
+Overview2010=
+;[Runtime]
+Runtime101=60
+Runtime102=60
+Runtime103=60
+Runtime104=60
+Runtime105=
+Runtime106=
+Runtime107=
+Runtime108=
+Runtime109=
+Runtime1010=
+Runtime201=60
+Runtime202=60
+Runtime203=
+Runtime204=
+Runtime205=
+Runtime206=
+Runtime207=
+Runtime208=
+Runtime209=
+Runtime2010=
+;[Season]
+Season101=04
+Season102=11
+Season103=03
+Season104=02
+Season105=
+Season106=
+Season107=
+Season108=
+Season109=
+Season1010=
+Season201=04
+Season202=11
+Season203=
+Season204=
+Season205=
+Season206=
+Season207=
+Season208=
+Season209=
+Season2010=
+;[Network]
+Network101=CBS
+Network102=CBS
+Network103=The CW
+Network104=The CW
+Network105=
+Network106=
+Network107=
+Network108=
+Network109=
+Network1010=
+Network201=FX
+Network202=CBS
+Network203=
+Network204=
+Network205=
+Network206=
+Network207=
+Network208=
+Network209=
+Network2010=
+;[Genres]
+Genres101="Drama","Action","Adventure","Mystery","Thriller"
+Genres102="Comedy","Talk Show"
+Genres103="Action","Adventure","Crime"
+Genres104="Drama","Science Fiction","Adventure"
+Genres105=
+Genres106=
+Genres107=
+Genres108=
+Genres109=
+Genres1010=
+Genres201="Drama","Horror","Thriller","Suspense","Fantasy"
+Genres202="Comedy","Talk Show"
+Genres203=
+Genres204=
+Genres205=
+Genres206=
+Genres207=
+Genres208=
+Genres209=
+Genres2010=
+;[Style]
+TextStyle=cFFFFFF H25 s16 Q4
+ShadowStyle=c000000 H25 s16 Q4
+SEStyle=cFFFFFF s10 ,Droid Sans
+TimeStyle=cD1E751 s18 ,serif
+;[WebTitle]
+WebTitle101=Person of Interest
+WebTitle102=The Late Late Show with Craig Ferguson
+WebTitle103=Arrow
+WebTitle104=The 100
+WebTitle105=
+WebTitle106=
+WebTitle107=
+WebTitle108=
+WebTitle109=
+WebTitle1010=
+WebTitle201=American Horror Story
+WebTitle202=The Late Late Show with Craig Ferguson
+WebTitle203=
+WebTitle204=
+WebTitle205=
+WebTitle206=
+WebTitle207=
+WebTitle208=
+WebTitle209=
+WebTitle2010=
+;[Notifier]
+;NotiTop=(Series Title)
+;NotiBlu=(Ep Title)
+;NotiInf=
+;NotiPic=(Poster)
+;NotiDes=
+;[WallChanger]
+;WallPos=fill
+;WallSource=Fanart
+;WallTimer=10
+;Watch=Fringe
+;WatchWall=%SkinsPath%\Cardellos\Trakt.tv\Ima\DownloadFile\WatchWall.png
+;[Torrent]
+TorSearch=https://kickass.to/usearch/
+TorSearch1=Http://torrentz.eu/searchA?f=
+TorSearch2=http://thepiratebay.se/search/
+TorSearch3=https://kickass.to/usearch/
+;[End]
+
+;;[TextStyle]
+;FontColor=255,255,255,255
+;FontFace=Droid Sans
+;StringStyle=Normal
+;StringAlign=LeftTop
+;StringCase=None
+;FontSize=14
+;StringEffect=Shadow
+;FontEffectColor=0,0,0,255
+;ClipString=0
+;AntiAlias=1
+;
+;;[SEStyle]
+;FontColor=255,255,255,255
+;solidcolor=0,143,187
+;FontFace=Droid Sans
+;StringAlign=RightTop
+;FontSize=9
+;AntiAlias=1
+;
+;;[TimeStyle]
+;FontFace=Serif
+;StringStyle=Normal
+;FontColor=209,231,81
+;StringAlign=CenterCenter
+;FontSize=18
